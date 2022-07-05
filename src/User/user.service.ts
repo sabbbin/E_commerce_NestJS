@@ -11,13 +11,14 @@ export class UserService{
     constructor(@InjectModel(User.name) private userModel: Model< UserDocument>,
     private passwordService:PasswordService
     ) {}
-     async register(registerUser:RegisterUserDto ):Promise <User>
+     async register(registerUser ):Promise <User>
      {
         const passwordhash= await this.passwordService.passwordHash(registerUser.password)
          const username= registerUser.username
         const registeruser=new this.userModel({
           username: username,
-          password:passwordhash
+          password:passwordhash,
+          image:registerUser.filepath
 
         })
         

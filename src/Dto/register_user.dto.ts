@@ -6,4 +6,8 @@ export class RegisterUserDto{
 
     @IsString()
     public password:string;
+
+    filepath:string;
+
+   
 }
