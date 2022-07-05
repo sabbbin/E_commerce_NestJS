@@ -5,11 +5,13 @@ import { ProductModule} from './product/product.modules'
 
 //Mongod connection
 import  {MongooseModule} from '@nestjs/mongoose'
-import { AuthModule } from './Auth/auth.modules';
+import { UserModule } from './User/user.modules';
+import { AuthModel } from './Auth/auth.module';
 
 @Module({
   imports: [ProductModule,
-    AuthModule,
+    UserModule,
+    AuthModel,
    MongooseModule.forRoot('mongodb://localhost/nest',{
    }),
   //  MongooseModule.forRoot('mongodb://localhost/product',{

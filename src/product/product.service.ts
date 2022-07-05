@@ -14,12 +14,12 @@ export class ProduceService{
     
     }
 
-    getAllProduct(){
-       return 'abc'
+    getAllProduct():Promise<Product[]>{
+       return this.productModel.find().exec()
     }
 
-    getSingleProduct(){
-        return 'getSingleProduct'
+    getSingleProduct(id){
+        return  this.productModel.findOne(id)
     }
 
     updateSingleProduct(){
