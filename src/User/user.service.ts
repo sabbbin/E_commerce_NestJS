@@ -18,7 +18,8 @@ export class UserService{
         const registeruser=new this.userModel({
           username: username,
           password:passwordhash,
-          image:registerUser.filepath
+          image:registerUser.filepath,
+          role:registerUser.role
 
         })
         
